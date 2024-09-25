@@ -175,17 +175,24 @@ nav a:hover {
 }
 
 @media only screen and (max-width: 870px) {
-    body {overflow-x:hidden;}
-    #main-container {
-    margin: 0;
-    border-radius: 0;
+
+    body,
+    html {
+        overflow-x: hidden;
     }
+
+    #main-container {
+        margin: 0;
+        border-radius: 0;
+    }
+
     nav {
         position: fixed;
         width: 90vw;
         border-radius: 0;
         top: 0;
     }
+
     nav .links {
         display: none;
         position: absolute;
@@ -206,10 +213,14 @@ nav a:hover {
         flex-direction: column;
     }
 
+    .active .links.active:active {
+        display: none;
+    }
+
     #ham {
         display: flex;
         z-index: 100;
-        position:fixed;
+        position: fixed;
         margin-left: 85vw;
         cursor: pointer;
         flex-direction: column;
@@ -224,20 +235,25 @@ nav a:hover {
         margin: 0.2rem;
         transition: 0.3s;
     }
+
     #main .content {
         font: 20px sans-serif;
     }
+
     #main .item {
         height: auto;
         flex-direction: column-reverse;
         /* font-size: 20px;  */
     }
+
     #main #about {
         margin-top: 64px;
     }
+
     .me:not(#about .me) {
         display: none;
     }
+
     #footer {
         border-radius: 0;
         margin-top: 5rem
