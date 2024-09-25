@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+}
+
+body,
+html {
+    background-color: rgb(200, 216, 221);
+    color: #000;
+    scroll-behavior: smooth;
+}
+
+#main-container {
+    margin: 2% 2% 2% 2%;
+    border-radius: 25px;
+    background-color: aliceblue;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    display: flex;
+    position: sticky;
+    top: 0;
+    background-color: aliceblue;
+    z-index: 100;
+    border-radius: 25px 25px 0 0;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 5vw;
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05);
+}
+
+.logo-name {
+    display: flex;
+    font-weight: bold;
+}
+
+.logo-name img {
+    width: 4em;
+    height: 4em;
+    margin-inline: 10px;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.links li {
+    margin-inline: 20px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+}
+
+nav a:hover {
+    color: lightsalmon;
+}
+
+#main .item {
+    display: flex;
+    margin: 0 20vw 2% 20vw;
+    width: 60vw;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#main #about {
+    animation: fade-in 0.5s linear;
+}
+
+#main .content {
+    font: 30px sans-serif;
+}
+
+#main ul {
+    font-size: 20px;
+}
+
+#main li {
+    margin: 5px;
+}
+
+#main .me {
+    width: 20rem;
+    border-radius: 50%;
+}
+
+#main #contact ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#main #contact a {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+    background-color: lightcyan;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#main #contact a span {
+    padding-left: 10%;
+}
+
+#main #contact a:hover {
+    background-color: azure;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+#footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 25px 25px;
+    height: 80px;
+    background-color: lightsteelblue;
+    padding-inline: 5vw;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+}
+
+.fade-in {
+    animation: fade-in 1s linear;
+    animation-timeline: view();
+    animation-range: 50px 36%;
+}
+
+.fade-out {
+    animation: fade-out 1s linear;
+    animation-timeline: view();
+    animation-range: 50px 36%;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0.1;
+        transform: translateX(-20vw);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        transform: translateX(+20vw);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media only screen and (max-width: 870px) {
+    body {overflow-x:hidden;}
+    #main-container {
+    margin: 0;
+    border-radius: 0;
+    }
+    nav {
+        position: fixed;
+        width: 90vw;
+        border-radius: 0;
+        top: 0;
+    }
+    nav .links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        right: 0;
+        text-align: center;
+        background-color: lightblue;
+        height: 15rem;
+    }
+
+    nav .links li {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .active .links.main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #ham {
+        display: flex;
+        z-index: 100;
+        position:fixed;
+        margin-left: 85vw;
+        cursor: pointer;
+        flex-direction: column;
+        top: 1rem;
+    }
+
+    #ham div {
+        display: block;
+        width: 2rem;
+        height: 0.2rem;
+        background-color: black;
+        margin: 0.2rem;
+        transition: 0.3s;
+    }
+    #main .content {
+        font: 20px sans-serif;
+    }
+    #main .item {
+        height: auto;
+        flex-direction: column-reverse;
+        /* font-size: 20px;  */
+    }
+    #main #about {
+        margin-top: 64px;
+    }
+    .me:not(#about .me) {
+        display: none;
+    }
+    #footer {
+        border-radius: 0;
+        margin-top: 5rem
+    }
+}
